@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Bcopoglu <Bcopoglu@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: bcopoglu <bcopoglu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 17:34:22 by Bcopoglu          #+#    #+#             */
-/*   Updated: 2023/07/03 17:44:06 by Bcopoglu         ###   ########.tr       */
+/*   Created: 2023/07/06 14:23:52 by bcopoglu          #+#    #+#             */
+/*   Updated: 2023/07/06 14:24:11 by bcopoglu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

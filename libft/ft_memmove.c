@@ -3,38 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Bcopoglu <Bcopoglu@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: bcopoglu <bcopoglu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 12:23:56 by Bcopoglu          #+#    #+#             */
-/*   Updated: 2023/07/04 12:43:12 by Bcopoglu         ###   ########.tr       */
+/*   Created: 2023/07/06 15:15:28 by bcopoglu          #+#    #+#             */
+/*   Updated: 2023/07/06 17:26:11 by bcopoglu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
 	size_t				i;
+	unsigned char		*str1;
+	unsigned const char	*str2;
 
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
+	str1 = (unsigned char *)dst;
+	str2 = (unsigned const char *)src;
 	i = 0;
-	if (d == s)
-		return (dest);
-	if (s < d)
+	if (str1 == str2)
+		return (dst);
+	if (str1 > str2)
 	{
-		while (n > 0)
+		while (len > 0)
 		{
-			n--;
-			d[n] = s[n];
+			len--;
+			str1[len] = str2[len];
 		}
 	}
-	while (i < n)
+	while (i < len)
 	{
-		d[i] = s[i];
+		str1[i] = str2[i];
 		i++;
 	}
-	return (dest);
+	return (dst);
 }

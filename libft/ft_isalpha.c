@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Bcopoglu <Bcopoglu@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: bcopoglu <bcopoglu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 16:34:22 by Bcopoglu          #+#    #+#             */
-/*   Updated: 2023/07/03 16:47:16 by Bcopoglu         ###   ########.tr       */
+/*   Created: 2023/07/06 13:24:08 by bcopoglu          #+#    #+#             */
+/*   Updated: 2023/07/06 14:28:09 by bcopoglu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

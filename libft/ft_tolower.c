@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Bcopoglu <Bcopoglu@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: bcopoglu <bcopoglu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 16:46:52 by Bcopoglu          #+#    #+#             */
-/*   Updated: 2023/07/04 16:48:18 by Bcopoglu         ###   ########.tr       */
+/*   Created: 2023/07/06 17:49:04 by bcopoglu          #+#    #+#             */
+/*   Updated: 2023/07/06 17:49:37 by bcopoglu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

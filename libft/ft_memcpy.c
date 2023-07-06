@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Bcopoglu <Bcopoglu@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: bcopoglu <bcopoglu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 13:16:20 by Bcopoglu          #+#    #+#             */
-/*   Updated: 2023/07/04 20:27:42 by Bcopoglu         ###   ########.tr       */
+/*   Created: 2023/07/06 14:44:11 by bcopoglu          #+#    #+#             */
+/*   Updated: 2023/07/06 17:26:00 by bcopoglu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
 	size_t				i;
+	unsigned char		*str1;
+	unsigned const char	*str2;
 
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
+	str1 = (unsigned char *)dst;
+	str2 = (const unsigned char *)src;
+	i = 0;
 	if (dst == NULL && src == NULL)
 		return (NULL);
-	i = 0;
 	while (i < n)
 	{
 		if (src == NULL)
-			d[i] = '\0';
+			str1[i] = '\0';
 		else
-			d[i] = s[i];
+			str1[i] = str2[i];
 		i++;
 	}
 	return (dst);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Bcopoglu <Bcopoglu@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: bcopoglu <bcopoglu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 16:53:17 by Bcopoglu          #+#    #+#             */
-/*   Updated: 2023/07/03 16:56:38 by Bcopoglu         ###   ########.tr       */
+/*   Created: 2023/07/06 14:23:19 by bcopoglu          #+#    #+#             */
+/*   Updated: 2023/07/06 14:23:43 by bcopoglu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
