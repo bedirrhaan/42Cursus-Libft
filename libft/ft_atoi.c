@@ -6,7 +6,7 @@
 /*   By: bcopoglu <bcopoglu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 23:39:50 by bcopoglu          #+#    #+#             */
-/*   Updated: 2023/07/06 23:39:50 by bcopoglu         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:51:09 by bcopoglu         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
-	int	loop;
+	size_t	i;
+	size_t	sign;
+	size_t	result;
+	size_t	loop;
 
 	i = 0;
 	sign = 1;
