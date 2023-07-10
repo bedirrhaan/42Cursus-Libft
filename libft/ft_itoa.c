@@ -14,49 +14,44 @@
 
 static int	get_num_len(int n)
 {
-	int	len;
+	int	i;
 
-	len = 0;
 	if (n == 0)
 		return (1);
-	if (n < 0)
+	i = 0;
+	while (n > 0 || n < 0)
 	{
-		len++;
-		n *= -1;
-	}
-	while (n > 0)
-	{
-		len++;
 		n /= 10;
+		i++;
 	}
-	return (len);
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
 	int		len;
 	char	*str;
+	long	nbr;
 
-	len = get_num_len(n);
+	nbr = n;
+	len = get_num_len(nbr);
+	if (n < 0)
+	{
+		len++;
+		nbr = -nbr;
+	}
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	str[len] = '\0';
-	if (n == 0)
+	while (nbr > 0)
 	{
-		str[0] = '0';
-		return (str);
+		str[--len] = nbr % 10 + '0';
+		nbr /= 10;
 	}
 	if (n < 0)
-	{
 		str[0] = '-';
-		n *= -1;
-	}
-	while (n > 0)
-	{
-		len--;
-		str[len] = '0' + (n % 10);
-		n /= 10;
-	}
+	if (n == 0)
+		str[0] = '0';
 	return (str);
 }

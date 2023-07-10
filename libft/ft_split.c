@@ -12,58 +12,57 @@
 
 #include "libft.h"
 
-static int    ft_count(char const *s, char c)
+static int	ft_count(char const *s, char c)
 {
-    int count;
-    int i;
+	int	count;
+	int	i;
 
-    count = 0;
-    i = 0;
-    while (s[i])
-    {
-        if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-            count++;
-        i++;
-    }
-    return (count);
+	count = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			count++;
+		i++;
+	}
+	return (count);
 }
 
-
-static void    ft_allocate(char **tab, char const *s, char sep)
+static void	ft_allocate(char **tab, char const *s, char sep)
 {
-    char        **tab_p;
-    char const    *tmp;
+	char		**tab_p;
+	char const	*tmp;
 
-    tmp = s;
-    tab_p = tab;
-    while (*tmp)
-    {
-        while (*s == sep)
-            s++;
-        tmp = s;
-        while (*tmp && *tmp != sep)
-            tmp++;
-        if (tmp > s)
-        {
-            *tab_p = ft_substr(s, 0, tmp - s);
-            tab_p++;
-        }
-        s = tmp;
-    }
-    *tab_p = NULL;
+	tmp = s;
+	tab_p = tab;
+	while (*tmp)
+	{
+		while (*s == sep)
+			s++;
+		tmp = s;
+		while (*tmp && *tmp != sep)
+			tmp++;
+		if (tmp > s)
+		{
+			*tab_p = ft_substr(s, 0, tmp - s);
+			tab_p++;
+		}
+		s = tmp;
+	}
+	*tab_p = NULL;
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char    **result;
-    int        size;
+	char	**result;
+	int		size;
 
-    if (!s)
-        return (NULL);
-    size = ft_count(s, c);
-    result = (char **)malloc(sizeof(char *) * (size + 1));
-    if (!result)
-        return (NULL);
-    ft_allocate(result, s, c);
-    return (result);
+	if (!s)
+		return (NULL);
+	size = ft_count(s, c);
+	result = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!result)
+		return (NULL);
+	ft_allocate(result, s, c);
+	return (result);
 }

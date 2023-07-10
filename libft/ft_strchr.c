@@ -6,7 +6,7 @@
 /*   By: bcopoglu <bcopoglu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 17:49:56 by bcopoglu          #+#    #+#             */
-/*   Updated: 2023/07/08 19:24:18 by bcopoglu         ###   ########.fr       */
+/*   Updated: 2023/07/10 12:37:06 by bcopoglu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (c == '\0')
-		return ((char *)(s + i));
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
 	return (NULL);
 }

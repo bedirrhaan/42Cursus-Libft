@@ -6,26 +6,37 @@
 /*   By: bcopoglu <bcopoglu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 10:39:01 by bcopoglu          #+#    #+#             */
-/*   Updated: 2023/07/09 19:46:14 by bcopoglu         ###   ########.fr       */
+/*   Updated: 2023/07/10 11:55:24 by bcopoglu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char		*str;
-	size_t		i;
+#include "libft.h"
 
-	str = (char *)malloc((len + 1) * sizeof(char));
-	if (!str)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
+{
+	char	*str;
+	size_t	slen;
+
+	slen = ft_strlen(s);
+	if (!s)
 		return (NULL);
-	i = 0;
-	while (i < len && s[start + i] != '\0')
+	if (start >= slen)
 	{
-		str[i] = s[start + i];
-		i++;
+		str = (char *)malloc(1 * sizeof(char));
+		if (!str)
+			return (NULL);
+		*str = '\0';
 	}
-	str[i] = '\0';
+	else
+	{
+		if (slen - start < len)
+			len = slen - start;
+		str = (char *)malloc((len + 1) * sizeof(char));
+		if (!str)
+			return (NULL);
+		ft_strlcpy(str, (s + start), len + 1);
+	}
 	return (str);
 }
