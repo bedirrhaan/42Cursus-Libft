@@ -6,11 +6,9 @@
 /*   By: bcopoglu <bcopoglu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 10:39:01 by bcopoglu          #+#    #+#             */
-/*   Updated: 2023/07/10 11:55:24 by bcopoglu         ###   ########.fr       */
+/*   Updated: 2023/07/10 17:00:36 by bcopoglu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 

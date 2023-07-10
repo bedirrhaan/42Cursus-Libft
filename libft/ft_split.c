@@ -12,57 +12,76 @@
 
 #include "libft.h"
 
-static int	ft_count(char const *s, char c)
+int	ft_word_counter(const char *str, char c)
 {
-	int	count;
 	int	i;
+	int	num_words;
 
-	count = 0;
 	i = 0;
-	while (s[i])
+	num_words = 0;
+	while (str[i])
 	{
-		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-			count++;
-		i++;
+		while (str[i] == c)
+			i++;
+		if (str[i] != c && str[i] != '\0')
+			num_words++;
+		while (str[i] && str[i] != c)
+			i++;
 	}
-	return (count);
+	return (num_words);
 }
 
-static void	ft_allocate(char **tab, char const *s, char sep)
+static int	ft_word_len(char const *str, char c, int i)
 {
-	char		**tab_p;
-	char const	*tmp;
+	int	len;
 
-	tmp = s;
-	tab_p = tab;
-	while (*tmp)
+	len = 0;
+	while (str[i] == c && str[i] != '\0')
+		i++;
+	while (str[i] != c && str[i] != '\0')
 	{
-		while (*s == sep)
-			s++;
-		tmp = s;
-		while (*tmp && *tmp != sep)
-			tmp++;
-		if (tmp > s)
-		{
-			*tab_p = ft_substr(s, 0, tmp - s);
-			tab_p++;
-		}
-		s = tmp;
+		len++;
+		i++;
 	}
-	*tab_p = NULL;
+	return (len);
+}
+
+static char	**ft_free(char **str_arr, int w_index)
+{
+	while (w_index >= 0)
+	{
+		free(str_arr[w_index]);
+		w_index--;
+	}
+	free(str_arr);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
-	int		size;
+	char	**str_arr;
+	size_t	i;
+	int		w_index;
+	int		char_index;
 
-	if (!s)
+	i = 0;
+	w_index = -1;
+	char_index = 0;
+	str_arr = (char **)malloc((ft_word_counter(s, c) + 1) * sizeof(char *));
+	if (!str_arr)
 		return (NULL);
-	size = ft_count(s, c);
-	result = (char **)malloc(sizeof(char *) * (size + 1));
-	if (!result)
-		return (NULL);
-	ft_allocate(result, s, c);
-	return (result);
+	while (++w_index < ft_word_counter(s, c))
+	{
+		char_index = 0;
+		str_arr[w_index] = malloc((ft_word_len(s, c, i) + 1) * sizeof(char));
+		if (!str_arr[w_index])
+			return (ft_free(str_arr, w_index - 1));
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		while (s[i] != c && s[i] != '\0')
+			str_arr[w_index][char_index++] = s[i++];
+		str_arr[w_index][char_index] = '\0';
+	}
+	str_arr[w_index++] = NULL;
+	return (str_arr);
 }
